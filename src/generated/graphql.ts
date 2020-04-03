@@ -61,7 +61,7 @@ export type Mutation_RootUpdate_NamesArgs = {
 /** columns and relationships of "names" */
 export type Names = {
    __typename?: 'names';
-  colour?: Maybe<Scalars['String']>;
+  color?: Maybe<Scalars['String']>;
   id: Scalars['Int'];
   name: Scalars['String'];
   number?: Maybe<Scalars['Int']>;
@@ -136,7 +136,7 @@ export type Names_Bool_Exp = {
   _and?: Maybe<Array<Maybe<Names_Bool_Exp>>>;
   _not?: Maybe<Names_Bool_Exp>;
   _or?: Maybe<Array<Maybe<Names_Bool_Exp>>>;
-  colour?: Maybe<String_Comparison_Exp>;
+  color?: Maybe<String_Comparison_Exp>;
   id?: Maybe<Int_Comparison_Exp>;
   name?: Maybe<String_Comparison_Exp>;
   number?: Maybe<Int_Comparison_Exp>;
@@ -156,7 +156,7 @@ export type Names_Inc_Input = {
 
 /** input type for inserting data into table "names" */
 export type Names_Insert_Input = {
-  colour?: Maybe<Scalars['String']>;
+  color?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['Int']>;
   name?: Maybe<Scalars['String']>;
   number?: Maybe<Scalars['Int']>;
@@ -165,7 +165,7 @@ export type Names_Insert_Input = {
 /** aggregate max on columns */
 export type Names_Max_Fields = {
    __typename?: 'names_max_fields';
-  colour?: Maybe<Scalars['String']>;
+  color?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['Int']>;
   name?: Maybe<Scalars['String']>;
   number?: Maybe<Scalars['Int']>;
@@ -173,7 +173,7 @@ export type Names_Max_Fields = {
 
 /** order by max() on columns of table "names" */
 export type Names_Max_Order_By = {
-  colour?: Maybe<Order_By>;
+  color?: Maybe<Order_By>;
   id?: Maybe<Order_By>;
   name?: Maybe<Order_By>;
   number?: Maybe<Order_By>;
@@ -182,7 +182,7 @@ export type Names_Max_Order_By = {
 /** aggregate min on columns */
 export type Names_Min_Fields = {
    __typename?: 'names_min_fields';
-  colour?: Maybe<Scalars['String']>;
+  color?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['Int']>;
   name?: Maybe<Scalars['String']>;
   number?: Maybe<Scalars['Int']>;
@@ -190,7 +190,7 @@ export type Names_Min_Fields = {
 
 /** order by min() on columns of table "names" */
 export type Names_Min_Order_By = {
-  colour?: Maybe<Order_By>;
+  color?: Maybe<Order_By>;
   id?: Maybe<Order_By>;
   name?: Maybe<Order_By>;
   number?: Maybe<Order_By>;
@@ -220,7 +220,7 @@ export type Names_On_Conflict = {
 
 /** ordering options when selecting data from "names" */
 export type Names_Order_By = {
-  colour?: Maybe<Order_By>;
+  color?: Maybe<Order_By>;
   id?: Maybe<Order_By>;
   name?: Maybe<Order_By>;
   number?: Maybe<Order_By>;
@@ -229,7 +229,7 @@ export type Names_Order_By = {
 /** select columns of table "names" */
 export enum Names_Select_Column {
   /** column name */
-  Colour = 'colour',
+  Color = 'color',
   /** column name */
   Id = 'id',
   /** column name */
@@ -240,7 +240,7 @@ export enum Names_Select_Column {
 
 /** input type for updating data in table "names" */
 export type Names_Set_Input = {
-  colour?: Maybe<Scalars['String']>;
+  color?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['Int']>;
   name?: Maybe<Scalars['String']>;
   number?: Maybe<Scalars['Int']>;
@@ -301,7 +301,7 @@ export type Names_Sum_Order_By = {
 /** update columns of table "names" */
 export enum Names_Update_Column {
   /** column name */
-  Colour = 'colour',
+  Color = 'color',
   /** column name */
   Id = 'id',
   /** column name */
@@ -465,7 +465,7 @@ export type NamesQuery = (
   { __typename?: 'query_root' }
   & { names: Array<(
     { __typename?: 'names' }
-    & Pick<Names, 'id' | 'name' | 'number' | 'colour'>
+    & Pick<Names, 'id' | 'name' | 'number' | 'color'>
   )> }
 );
 
@@ -476,7 +476,7 @@ export type NamesSubscriptionSubscription = (
   { __typename?: 'subscription_root' }
   & { names: Array<(
     { __typename?: 'names' }
-    & Pick<Names, 'id' | 'name' | 'number' | 'colour'>
+    & Pick<Names, 'id' | 'name' | 'number' | 'color'>
   )> }
 );
 
@@ -520,7 +520,7 @@ export const NamesDocument = gql`
     id
     name
     number
-    colour
+    color
   }
 }
     `;
@@ -538,7 +538,7 @@ export const NamesSubscriptionDocument = gql`
     id
     name
     number
-    colour
+    color
   }
 }
     `;
@@ -553,7 +553,7 @@ export const NamesSubscriptionDocument = gql`
 export const AddNameDocument = gql`
     mutation addName($name: String, $number: Int = 0, $color: String = "black") {
   __typename
-  insert_names(objects: {colour: $color, name: $name, number: $number}) {
+  insert_names(objects: {color: $color, name: $name, number: $number}) {
     returning {
       id
     }
@@ -593,7 +593,7 @@ export const Names = gql`
     id
     name
     number
-    colour
+    color
   }
 }
     `;
@@ -603,14 +603,14 @@ export const NamesSubscription = gql`
     id
     name
     number
-    colour
+    color
   }
 }
     `;
 export const AddName = gql`
     mutation addName($name: String, $number: Int = 0, $color: String = "black") {
   __typename
-  insert_names(objects: {colour: $color, name: $name, number: $number}) {
+  insert_names(objects: {color: $color, name: $name, number: $number}) {
     returning {
       id
     }

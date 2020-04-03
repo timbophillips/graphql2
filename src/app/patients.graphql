@@ -3,7 +3,7 @@ query Names {
     id
     name
     number
-    colour
+    color
   }
 }
 
@@ -12,13 +12,13 @@ subscription NamesSubscription {
     id
     name
     number
-    colour
+    color
   }
 }
 
 mutation addName($name: String, $number: Int = 0, $color: String = "black") {
   __typename
-  insert_names(objects: {colour: $color, name: $name, number: $number}) {
+  insert_names(objects: {color: $color, name: $name, number: $number}) {
     returning {
       id
     }

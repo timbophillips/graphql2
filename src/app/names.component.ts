@@ -7,8 +7,10 @@ import { NamesGQL, NamesSubscriptionGQL, AddNameGQL, DelNameGQL } from '../gener
   selector: 'app-names',
   template: `<h3>apollo-hasura-learning</h3>
 <p>
-  <input #newName (keydown)="onKeydown($event)" />
-  <button (click)="addName(newName.value)">Add new name</button>
+  <input #newName />
+  <input #newColor />
+  <input #newNumber />
+  <button (click)="addName(newName.value, newColor.value, newNumber.value)">Add new name</button>
 </p>
 <ul *ngFor="let item of namesSub$ | async | select: 'names'">
   ID:{{
@@ -20,7 +22,7 @@ import { NamesGQL, NamesSubscriptionGQL, AddNameGQL, DelNameGQL } from '../gener
   }}
   Color:
   {{
-    item.colour
+    item.color
   }}
   Number:
   {{
@@ -71,18 +73,11 @@ export class NamesComponent implements OnInit {
     this.namesSub$ = this.namesSubscriptionGQL.subscribe();
   }
 
-  addName(newName: string) {
-    this.addNameGQL.mutate({ name: newName }).subscribe(x => console.log(JSON.stringify(x)));
+  addName(newName: string, newColor: string, newNumber: number) {
+    this.addNameGQL.mutate({ name: newName, number: newNumber, color: newColor }).subscribe(x => console.log(JSON.stringify(x)));
   }
 
   delName(id: number | string) {
     this.delNameGQL.mutate({ id: id as number }).subscribe(x => console.log(JSON.stringify(x)));
   }
-
-  onKeydown(event) {
-    if (event.key === 'Enter') {
-      this.addName(event.target.value);
-    }
-  }
-
 }

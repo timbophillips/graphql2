@@ -1,5 +1,5 @@
 # source: http://localhost:8080/v1/graphql
-# timestamp: Fri Apr 03 2020 14:42:39 GMT+0800 (Australian Western Standard Time)
+# timestamp: Fri Apr 03 2020 20:16:46 GMT+0800 (Australian Western Standard Time)
 
 schema {
   query: query_root
@@ -62,7 +62,7 @@ type mutation_root {
 columns and relationships of "names"
 """
 type names {
-  colour: String
+  color: String
   id: Int!
   name: String!
   number: Int
@@ -139,7 +139,7 @@ input names_bool_exp {
   _and: [names_bool_exp]
   _not: names_bool_exp
   _or: [names_bool_exp]
-  colour: String_comparison_exp
+  color: String_comparison_exp
   id: Int_comparison_exp
   name: String_comparison_exp
   number: Int_comparison_exp
@@ -165,7 +165,7 @@ input names_inc_input {
 input type for inserting data into table "names"
 """
 input names_insert_input {
-  colour: String
+  color: String
   id: Int
   name: String
   number: Int
@@ -173,7 +173,7 @@ input names_insert_input {
 
 """aggregate max on columns"""
 type names_max_fields {
-  colour: String
+  color: String
   id: Int
   name: String
   number: Int
@@ -183,7 +183,7 @@ type names_max_fields {
 order by max() on columns of table "names"
 """
 input names_max_order_by {
-  colour: order_by
+  color: order_by
   id: order_by
   name: order_by
   number: order_by
@@ -191,7 +191,7 @@ input names_max_order_by {
 
 """aggregate min on columns"""
 type names_min_fields {
-  colour: String
+  color: String
   id: Int
   name: String
   number: Int
@@ -201,7 +201,7 @@ type names_min_fields {
 order by min() on columns of table "names"
 """
 input names_min_order_by {
-  colour: order_by
+  color: order_by
   id: order_by
   name: order_by
   number: order_by
@@ -239,7 +239,7 @@ input names_on_conflict {
 ordering options when selecting data from "names"
 """
 input names_order_by {
-  colour: order_by
+  color: order_by
   id: order_by
   name: order_by
   number: order_by
@@ -250,7 +250,7 @@ select columns of table "names"
 """
 enum names_select_column {
   """column name"""
-  colour
+  color
 
   """column name"""
   id
@@ -266,7 +266,7 @@ enum names_select_column {
 input type for updating data in table "names"
 """
 input names_set_input {
-  colour: String
+  color: String
   id: Int
   name: String
   number: Int
@@ -333,7 +333,7 @@ update columns of table "names"
 """
 enum names_update_column {
   """column name"""
-  colour
+  color
 
   """column name"""
   id
