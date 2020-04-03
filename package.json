@@ -2,7 +2,7 @@
   "name": "graphql2",
   "version": "0.0.0",
   "scripts": {
-    "start:ng": "ng serve",
+    "start:ng": "ng serve --host 0.0.0.0  ",
     "ng": "ng",
     "start": "run-p start:ng gql:codegen:watch",
     "build": "ng build",
@@ -29,6 +29,7 @@
     "apollo-cache-inmemory": "^1.6.0",
     "apollo-client": "^2.6.0",
     "apollo-link": "^1.2.11",
+    "component": "^1.1.0",
     "graphql": "^14.6.0",
     "graphql-tag": "^2.10.0",
     "rxjs": "~6.5.4",

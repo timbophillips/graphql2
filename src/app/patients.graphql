@@ -1,6 +1,35 @@
-query Patients {
+query Names {
   names {
     id
     name
+    number
+    colour
+  }
+}
+
+subscription NamesSubscription {
+  names {
+    id
+    name
+    number
+    colour
+  }
+}
+
+mutation addName($name: String, $number: Int = 0, $color: String = "black") {
+  __typename
+  insert_names(objects: {colour: $color, name: $name, number: $number}) {
+    returning {
+      id
+    }
+  }
+}
+
+mutation delName($id: Int) {
+  __typename
+  delete_names(where: {id: {_eq: $id}}) {
+    returning {
+      id
+    }
   }
 }
